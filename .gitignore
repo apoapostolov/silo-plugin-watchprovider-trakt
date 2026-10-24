@@ -1,4 +1,5 @@
-# Per-plugin build output
+/dist/
+/plugin
 /plugins/*/dist/
 /plugins/*/plugin
 /plugins/*/bin/
