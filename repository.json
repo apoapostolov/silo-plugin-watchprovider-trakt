@@ -3,7 +3,7 @@
     {
       "manifest": {
         "plugin_id": "community.watchprovider.trakt",
-        "version": "0.3.0-community",
+        "version": "0.3.1-community",
         "silo_api_version": "v1",
         "supported_platforms": [
           {
@@ -77,9 +77,9 @@
                 {
                   "key": "client_secret",
                   "label": "Client secret",
-                  "description": "Client secret of your Trakt API app.",
+                  "description": "Client secret of your Trakt API app. Leave blank for a public client that signs in with the device code only.",
                   "control": 3,
-                  "required": true,
+                  "required": false,
                   "secret": true
                 }
               ]
@@ -104,16 +104,16 @@
       "repo_url": "https://github.com/apoapostolov/silo-plugins/tree/main/plugins/watchprovider-trakt",
       "binaries": {
         "linux/amd64": {
-          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.0/trakt-linux-amd64",
-          "checksum": "0fdcb4d406334806c05dabb66c0f00e3f0d4d1c8715563054401468d9bebd245"
+          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.1/trakt-linux-amd64",
+          "checksum": "e3b799e23b651cd3e3a6e6b61ffb4bb843d3b7c68ef8c5450a29bc83e35441fe"
         },
         "linux/arm64": {
-          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.0/trakt-linux-arm64",
-          "checksum": "eace06d54cd444128bfcb4d986403f792cc39968e0373d9101498125b21978b6"
+          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.1/trakt-linux-arm64",
+          "checksum": "2d5d7d986c53afc1301521b4c98f731cddc2e07b1270756ab7d59206cfe885b9"
         },
         "darwin/arm64": {
-          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.0/trakt-darwin-arm64",
-          "checksum": "268ca9dd1b6f9842f23e5971d452de76d7b0342ce0c4a85f898ac768acd7d0a0"
+          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.1/trakt-darwin-arm64",
+          "checksum": "f0192c4fde9caf1ae1b89c9f33ba5b92b1bd5b15a05873136b87eebdbe2d6a42"
         }
       }
     },
@@ -323,15 +323,15 @@
       "repo_url": "https://github.com/apoapostolov/silo-plugins/tree/main/plugins/metadata-comicinfo",
       "binaries": {
         "linux/amd64": {
-          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.0/comicinfo-linux-amd64",
+          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.1/comicinfo-linux-amd64",
           "checksum": "e461526fa6f87b0e31c743c756ce3d679151ce6cd8dcf73e2391b044ab871aa1"
         },
         "linux/arm64": {
-          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.0/comicinfo-linux-arm64",
+          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.1/comicinfo-linux-arm64",
           "checksum": "6320d515f39d7a1c4f869154577a6f3b467c346dc43d18e073d3667f1afa5434"
         },
         "darwin/arm64": {
-          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.0/comicinfo-darwin-arm64",
+          "url": "https://github.com/apoapostolov/silo-plugins/releases/download/v0.4.1/comicinfo-darwin-arm64",
           "checksum": "a5cd89de7ad458e726a1f4a6dde5f69e6b964e5c91a7edc363b22c6677d60573"
         }
       }
