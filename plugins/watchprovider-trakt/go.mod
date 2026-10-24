@@ -1,4 +1,4 @@
-module github.com/apoapostolov/silo-plugin-watchprovider-trakt
+module github.com/apoapostolov/silo-plugins/plugins/watchprovider-trakt
 
 go 1.26.4
 

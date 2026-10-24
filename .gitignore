@@ -1,5 +1,7 @@
-/dist/
-/plugin
+# Per-plugin build output
+/plugins/*/dist/
+/plugins/*/plugin
+/plugins/*/bin/
 
 # Local agent/tooling state
 /.agents/

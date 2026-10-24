@@ -91,9 +91,9 @@
     "description_markdown": "Imports watched movies and episodes, resume progress, favorites, the watchlist, movie and show ratings, and dropped shows from Trakt. Exports completed plays, unwatched titles, favorites, watchlist changes, ratings, and dropped shows, and forwards live playback start, pause, and stop events.",
     "setup_markdown": "Create an API app at [trakt.tv/oauth/applications](https://trakt.tv/oauth/applications) with the redirect URI `urn:ietf:wg:oauth:2.0:oob`, then enter its client ID and client secret below. Each Silo profile then connects its own Trakt account from its watch-provider settings by entering a code at trakt.tv/activate.",
     "homepage_url": "https://trakt.tv",
-    "source_url": "https://github.com/apoapostolov/silo-plugin-watchprovider-trakt",
-    "support_url": "https://github.com/apoapostolov/silo-plugin-watchprovider-trakt/issues",
-    "changelog_url": "https://github.com/apoapostolov/silo-plugin-watchprovider-trakt/releases",
+    "source_url": "https://github.com/apoapostolov/silo-plugins/tree/main/plugins/watchprovider-trakt",
+    "support_url": "https://github.com/apoapostolov/silo-plugins/issues",
+    "changelog_url": "https://github.com/apoapostolov/silo-plugins/releases",
     "publisher_name": "Apostol Apostolov",
     "publisher_url": "https://github.com/Silo-Server",
     "license_spdx": "AGPL-3.0-only"

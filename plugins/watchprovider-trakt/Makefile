@@ -2,7 +2,7 @@
 
 BINARY=plugin
 PLATFORMS=linux/amd64 linux/arm64 darwin/arm64
-VERSION ?= $(shell git describe --tags --always 2>/dev/null | sed 's/^v//')
+VERSION ?= 0.3.0-community
 LDFLAGS=-s -w -X main.version=$(VERSION)
 
 build:
