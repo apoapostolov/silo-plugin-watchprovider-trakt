@@ -1,6 +1,6 @@
 {
   "plugin_id": "community.watchprovider.trakt",
-  "version": "0.3.0-community",
+  "version": "0.3.1-community",
   "checksum": "__CHECKSUM__",
   "silo_api_version": "v1",
   "supported_platforms": [
@@ -75,9 +75,9 @@
           {
             "key": "client_secret",
             "label": "Client secret",
-            "description": "Client secret of your Trakt API app.",
+            "description": "Client secret of your Trakt API app. Leave blank for a public client that signs in with the device code only.",
             "control": "ADMIN_FORM_CONTROL_PASSWORD",
-            "required": true,
+            "required": false,
             "secret": true
           }
         ]

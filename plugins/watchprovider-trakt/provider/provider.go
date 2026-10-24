@@ -109,7 +109,7 @@ func appConfigFrom(config *pluginv1.WatchSyncProviderConfig) (appConfig, *plugin
 		return strings.TrimSpace(config.GetSecretValues()[key])
 	}
 	app := appConfig{clientID: lookup(configClientID), clientSecret: lookup(configClientSecret)}
-	if app.clientID == "" || app.clientSecret == "" {
+	if app.clientID == "" {
 		return appConfig{}, newFault(pluginv1.WatchSyncFaultCode_WATCH_SYNC_FAULT_CODE_PERMISSION_DENIED, notConfiguredMessage)
 	}
 	return app, nil
@@ -207,12 +207,15 @@ func (s *Server) RefreshCredentials(ctx context.Context, req *pluginv1.WatchSync
 	ctx, cancel, _ := s.window(ctx)
 	defer cancel()
 	var token traktToken
-	if _, _, fault := client.do(ctx, http.MethodPost, "/oauth/token", nil, map[string]string{
+	body := map[string]string{
 		"refresh_token": refreshToken,
 		"client_id":     client.app.clientID,
-		"client_secret": client.app.clientSecret,
 		"grant_type":    "refresh_token",
-	}, &token); fault != nil {
+	}
+	if client.app.clientSecret != "" {
+		body["client_secret"] = client.app.clientSecret
+	}
+	if _, _, fault := client.do(ctx, http.MethodPost, "/oauth/token", nil, body, &token); fault != nil {
 		return &pluginv1.WatchSyncCredentialResponse{Fault: fault}, nil
 	}
 	credentials := s.credentials(token, refreshToken)
