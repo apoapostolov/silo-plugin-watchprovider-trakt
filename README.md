@@ -22,10 +22,22 @@ Every sync reads the full Trakt lists; Trakt has no change feed the plugin could
 
 The plugin keeps to Trakt's rate limits for each connection: one write per second, and paged reads paced to stay under 500 per five minutes. When Trakt asks it to wait ten seconds or less, the plugin waits and retries; a longer wait, or no stated wait (five minutes), pauses that profile's sync until then.
 
+## Install
+
+Add this catalog URL under **Admin → Plugins → Repositories**:
+
+```
+https://raw.githubusercontent.com/apoapostolov/silo-plugin-watchprovider-trakt/main/repository.json
+```
+
+Then install **Trakt Watch Provider** (`community.watchprovider.trakt`) from the catalog. The catalog points at the binaries in the [v0.3.0-community release](https://github.com/apoapostolov/silo-plugin-watchprovider-trakt/releases/tag/v0.3.0-community) and pins their SHA-256 checksums.
+
+To install without a catalog, download the binary for the server platform from the release and upload it under **Admin → Plugins**.
+
 ## Setup
 
 1. Create an API app at [trakt.tv/oauth/applications/new](https://trakt.tv/oauth/applications/new). Trakt requires a redirect URI; enter `urn:ietf:wg:oauth:2.0:oob`. Device sign-in does not use it.
-2. Install the plugin in Silo, open its settings, and enter the app's **Client ID** and **Client secret**. Every profile on the server connects through this one app.
+2. Open the installed plugin's settings and enter the app's **Client ID** and **Client secret**. Every profile on the server connects through this one app.
 3. Each profile connects its own Trakt account from its watch-provider settings.
 
 Until the client ID and secret are set, every Trakt request fails with a message asking an administrator to configure the plugin.
@@ -40,7 +52,7 @@ A connection whose refresh token Trakt issued before its 2026 sign-in migration 
 
 ## Development
 
-The plugin builds against `silo-plugin-sdk` v0.21.0.
+The plugin builds against `silo-plugin-sdk` v0.24.0.
 
 ```bash
 make test
