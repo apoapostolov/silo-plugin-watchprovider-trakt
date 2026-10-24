@@ -17,12 +17,12 @@ func loadManifest(t *testing.T) *pluginv1.PluginManifest {
 	return parsed
 }
 
-// The host registers the plugin under the provider key Silo's built-in Trakt
-// provider used, so the identity must match it.
+// Community fork: a new plugin id is required because Silo retired
+// "silo.watchprovider.trakt"; the host will not register the retired id.
 func TestManifestIdentifiesTheTraktProvider(t *testing.T) {
 	t.Parallel()
 	parsed := loadManifest(t)
-	if parsed.GetPluginId() != "silo.watchprovider.trakt" || parsed.GetCategory() != "Watch Providers" {
+	if parsed.GetPluginId() != "community.watchprovider.trakt" || parsed.GetCategory() != "Watch Providers" {
 		t.Fatalf("plugin = %q in %q", parsed.GetPluginId(), parsed.GetCategory())
 	}
 	capabilities := parsed.GetCapabilities()
